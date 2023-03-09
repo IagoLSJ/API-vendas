@@ -7,7 +7,8 @@
     "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/shared/http/server.ts",
     "lint": "eslint . --ext .ts",
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
-    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
+    "db-run-migration": "yarn typeorm migration:run"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
