@@ -13,15 +13,6 @@ const usersAvatarController = new UsersAvatarController();
 const upload = multer(uploadConfig);
 usersRouter.get('/', isAutheticated, usersController.index);
 
-usersRouter.get(
-    '/:id',
-    celebrate({
-        [Segments.PARAMS]: {
-            id: Joi.string().uuid().required(),
-        },
-    }),
-    usersController.show,
-);
 
 usersRouter.post(
     '/',
