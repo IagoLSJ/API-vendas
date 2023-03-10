@@ -1,5 +1,5 @@
-import { CreateUserService } from '../services/CreateUserService';
 import { Request, Response } from 'express';
+import { CreateUserService } from '../services/CreateUserService';
 import { ListUsersService } from '../services/ListUsersService';
 
 export class UsersController {
@@ -10,15 +10,21 @@ export class UsersController {
         return response.json(users);
     }
 
-    async create(request: Request, response:Response): Promise<Response>{
-        const {name, email, password} = request.body;
+    
+
+    async create(request: Request, response: Response): Promise<Response> {
+        const { name, email, password } = request.body;
 
         const createUser = new CreateUserService();
 
-        const userCreated = await createUser.execute({name, email, password});
+        const userCreated = await createUser.execute({
+            name,
+            email,
+            password,
+        });
 
-
-        return response.json(userCreated)
+        return response.json(userCreated);
     }
 
+   
 }

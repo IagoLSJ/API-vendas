@@ -13,16 +13,23 @@ const usersAvatarController = new UsersAvatarController();
 const upload = multer(uploadConfig);
 usersRouter.get('/', isAutheticated, usersController.index);
 
-
 usersRouter.post(
     '/',
     celebrate({
         [Segments.BODY]: {
             name: Joi.string().required(),
             email: Joi.string().email().required(),
-            password: Joi.string().min(8).required(),
+            old_password: Joi.string().min(8),
+            password: Joi.string().optional(),
+            password_confirmaation: Joi.string()
+                .valid(Joi.ref('password'))
+                .when('password', {
+                    is: Joi.exist(),
+                    then: Joi.required(),
+                }),
         },
     }),
+    isAutheticated,
     usersController.create,
 );
 

@@ -5,7 +5,7 @@ build/
 temp/
 .env
 coverage
-
+ormconfiglocal.md
 dist
 src/config/firebase
 uploads/*
