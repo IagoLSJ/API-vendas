@@ -18,8 +18,8 @@ export class UpdateProfileServcive {
         password,
         old_password,
     }: IRequest): Promise<User> {
-        // 1 get user and verifi if user os exist
         const userRepository = getCustomRepository(UserRepository);
+
         const userById = await userRepository.findById(id);
 
         if (!userById) throw new AppError('User does not exist');

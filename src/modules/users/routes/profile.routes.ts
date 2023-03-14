@@ -12,10 +12,10 @@ profileRouter.put(
     '/profile',
     celebrate({
         [Segments.BODY]: {
-            name: Joi.string().required(),
-            email: Joi.string().email().required(),
-            password: Joi.string().min(8).required(),
-            old_password: Joi.string().min(8).required(),
+            name: Joi.string(),
+            email: Joi.string().email(),
+            password: Joi.string().min(8),
+            old_password: Joi.string().min(8),
         },
     }),
     isAutheticated,
