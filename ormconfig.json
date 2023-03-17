@@ -2,7 +2,9 @@
     "type": "postgres",
     "url": "postgres://admin:Yr4dZhAzDgZedVvExHHxsNx8ASI5FPq0@dpg-cg50r2g2qv287crss14g-a.oregon-postgres.render.com/apivendas",
     "ssl": true,
-   
+    "entities": [
+        "./src/modules/**/typeorm/entities/*.ts"
+    ],
     "migrations": [
         "./src/shared/typeorm/migrations/*.ts"
     ],
