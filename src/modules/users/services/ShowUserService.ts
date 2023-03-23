@@ -14,7 +14,6 @@ export  class ShowUserService {
         if (!userById) {
             throw new AppError('User does not exist');
         }
-
         return userById;
     }
 }

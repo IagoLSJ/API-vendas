@@ -1,3 +1,4 @@
+import { classToClass } from 'class-transformer';
 import { Request, Response } from 'express';
 import { CreateUserService } from '../services/CreateUserService';
 import { ListUsersService } from '../services/ListUsersService';
@@ -7,7 +8,7 @@ export class UsersController {
         const listUsers = new ListUsersService();
         const users = await listUsers.execute();
 
-        return response.json(users);
+        return response.json(classToClass(users));
     }
 
     
@@ -23,7 +24,7 @@ export class UsersController {
             password,
         });
 
-        return response.json(userCreated);
+        return response.json(classToClass(userCreated));
     }
 
    

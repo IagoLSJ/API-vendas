@@ -8,7 +8,6 @@ export class ListCustomersService {
         const customersRepository = getCustomRepository(CustomerRepository);
 
         const customers = await customersRepository.find();
-
         return customers;
     }
 }

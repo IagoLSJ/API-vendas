@@ -3,6 +3,7 @@ import mailConfig from '@config/mail/mailConfig';
 
 export default class EmailService {
     async sendEmail(email: string, token:string) {
+
         const transport = nodemailer.createTransport({
             host: mailConfig.host,
             port: mailConfig.port,
