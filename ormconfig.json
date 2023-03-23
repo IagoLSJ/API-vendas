@@ -1,10 +1,7 @@
 {
     "type": "postgres",
-    "port": 5432,
-    "username": "postgres",
-    "password": "postgres",
-    "database": "apivendas",
-    "ssl": false,
+    "url": "postgres://admin:Yr4dZhAzDgZedVvExHHxsNx8ASI5FPq0@dpg-cg50r2g2qv287crss14g-a.oregon-postgres.render.com/apivendas",
+    "ssl": true,
     "migrations": [
         "./src/shared/typeorm/migrations/*.ts"
     ],
